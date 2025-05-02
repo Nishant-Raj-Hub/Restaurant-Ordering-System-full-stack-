@@ -1,9 +1,9 @@
-import React from 'react';
-import { useCart } from '../context/CartContext';
-import { Order } from '../types';
-import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useCart } from "../context/CartContext";
+import { Order } from "../types";
+import { motion } from "framer-motion";
+import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface CheckoutProps {
   isOpen: boolean;
@@ -26,23 +26,18 @@ const Checkout: React.FC<CheckoutProps> = ({
       items: state.items,
       total: state.total,
       createdAt: new Date(),
-      user: {
-        name: 'John Doe',
-        phone: '555-0123',
-      },
-      paymentMethod: 'card'
     };
 
     onOrderPlaced(orderData);
-    dispatch({ type: 'CLEAR_CART' });
-    navigate('/');
+    dispatch({ type: "CLEAR_CART" });
+    navigate("/");
   };
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen p-4">
         <div className="fixed inset-0 bg-black/70" onClick={onClose} />
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,6 +54,20 @@ const Checkout: React.FC<CheckoutProps> = ({
             </button>
           </div>
 
+          {/* ask for name and phone number */}
+          {/* <div className="mb-4">
+            <input
+              type="text"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              placeholder="Name"
+            />
+            <input
+              type="text"
+              className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-teal-500 mt-2"
+              placeholder="Phone Number (without country code)"
+            />
+          </div> */}
+
           <div className="space-y-4 mb-6">
             <div className="border-t border-b py-4">
               {state.items.map((item) => (
@@ -69,13 +78,13 @@ const Checkout: React.FC<CheckoutProps> = ({
                   <span>
                     {item.name} x {item.quantity}
                   </span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                  {`₹${(item.price * item.quantity).toFixed(2)}`}
                 </div>
               ))}
             </div>
             <div className="flex justify-between items-center font-semibold">
               <span>Total</span>
-              <span>${state.total.toFixed(2)}</span>
+              {`₹${state.total.toFixed(2)}`}
             </div>
           </div>
 

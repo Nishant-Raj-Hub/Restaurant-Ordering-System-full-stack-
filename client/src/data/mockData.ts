@@ -1,12 +1,4 @@
-import { MenuItem, Category } from '../types';
-
-export const categories: Category[] = [
-  { id: 'starters', name: 'Starters' },
-  { id: 'main-courses', name: 'Main Courses' },
-  { id: 'sides', name: 'Sides' },
-  { id: 'desserts', name: 'Desserts' },
-  { id: 'beverages', name: 'Beverages' }
-];
+import { MenuItem } from '../types';
 
 export const menuItems: MenuItem[] = [
   {

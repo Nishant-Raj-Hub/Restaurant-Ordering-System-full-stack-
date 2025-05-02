@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { placeOrder, getOrdersByPhone } from "../controllers/order.controller";
+import { placeOrder, getAllOrders } from "../controllers/order.controller";
 
 const router = Router();
 
 router.post("/", placeOrder);
-router.get("/:phone", getOrdersByPhone);
+router.get("/orderhistory", getAllOrders);
 
 export default router;

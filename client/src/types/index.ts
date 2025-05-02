@@ -8,6 +8,7 @@ export interface MenuItem {
   }
   
   export interface CartItem extends MenuItem {
+    id: string;
     quantity: number;
   }
   
@@ -16,17 +17,10 @@ export interface MenuItem {
     name: string;
   }
   
-  export interface User {
-    name: string;
-    phone: string;
-  }
-  
   export interface Order {
     items: CartItem[];
     total: number;
-    user: User;
-    paymentMethod: PaymentMethod;
     createdAt: Date;
+    _id: string;
   }
   
-  export type PaymentMethod = 'cash' | 'card' | 'upi';
