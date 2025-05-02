@@ -21,6 +21,6 @@ export interface MenuItem {
     items: CartItem[];
     total: number;
     createdAt: Date;
-    _id?: string;  
+    _id?: string;  // Made optional with '?'
   }
 

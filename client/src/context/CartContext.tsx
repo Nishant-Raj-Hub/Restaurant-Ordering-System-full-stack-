@@ -50,7 +50,11 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         };
       } else {
         // Add new item with quantity 1
-        const newItem: CartItem = { ...action.payload, quantity: 1 };
+        const newItem: CartItem = {
+          ...action.payload,
+          _id: action.payload.id, // Use the existing id as _id
+          quantity: 1,
+        };
         const updatedItems = [...state.items, newItem];
         return {
           ...state,
