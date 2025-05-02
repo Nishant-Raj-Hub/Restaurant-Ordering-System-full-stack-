@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch("https://restaurant-ordering-system-full-stack.onrender.com/api/menu");
         const data = await response.json();
         setMenuItems(data);
         setIsLoading(false);

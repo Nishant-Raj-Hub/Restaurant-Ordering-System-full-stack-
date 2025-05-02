@@ -10,7 +10,7 @@ const Orders: React.FC = () => {
     const fetchOrders = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/orders/orderhistory"
+          "https://restaurant-ordering-system-full-stack.onrender.com/api/orders/orderhistory"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch orders");

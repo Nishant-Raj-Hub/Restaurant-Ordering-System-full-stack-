@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ openCart }) => {
                 isScrolled ? "text-gray-700" : "text-white"
               } hover:text-teal-500 transition duration-300`}
             >
-              Menu
+              Home
             </Link>
             <Link
               to="/orders"

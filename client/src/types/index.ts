@@ -8,7 +8,7 @@ export interface MenuItem {
   }
   
   export interface CartItem extends MenuItem {
-    id: string;
+    _id: string;
     quantity: number;
   }
   
@@ -21,6 +21,6 @@ export interface MenuItem {
     items: CartItem[];
     total: number;
     createdAt: Date;
-    _id: string;
+    _id?: string;  
   }
-  
+
