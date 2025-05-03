@@ -19,6 +19,12 @@ const categories: Category[] = [
   { id: "beverages", name: "Beverages" },
 ];
 
+/**
+ * Menu component that displays a filterable grid of menu items.
+ * Uses data fetched from a backend API.
+ * @note Due to free hosting, initial server startup may take up to 1 minute
+ * @returns A section containing category filters and menu items grid
+ */
 const Menu: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [menuItems, setMenuItems] = useState<MenuItemType[]>([]);
@@ -91,6 +97,13 @@ const Menu: React.FC = () => {
               {category.name}
             </button>
           ))}
+        </div>
+
+        {/* Note  */}
+        <div className="text-center mb-6">
+          <p className="text-gray-600 text-2xl sm:text-3xl bg-amber-300 max-w-2xl mx-auto">
+          NOTE: Due to free hosting, initial server startup may take up to 1 minute
+          </p>
         </div>
 
         {/* Menu grid */}
